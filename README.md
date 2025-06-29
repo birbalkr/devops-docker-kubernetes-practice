@@ -120,6 +120,92 @@ docker exec -it <container> bash  # Open bash in running container
 
 ---
 
+### 🔹 Volumes & Networks
+
+```bash
+docker volume create <name>    # Create a volume
+docker volume ls               # List volumes
+docker network ls              # List networks
+docker network create <name>   # Create a network
+
+Absolutely! Below is a **GitHub-friendly section** you can directly paste into your `README.md` file. It uses **your image name (`myapp`)**, and includes clear examples of how to work with **Docker volumes and networks**.
+```
+---
+
+## 💾 Docker Volumes & Networks (Using `myapp`)
+
+### 📦 Create and Use a Volume
+
+Create a Docker volume:
+
+```bash
+docker volume create mydata
+```
+
+Run your container with the volume mounted:
+
+```bash
+docker run -d -v mydata:/app/data myapp
+```
+
+> This mounts the volume `mydata` to the `/app/data` directory inside the `myapp` container.
+
+List all volumes:
+
+```bash
+docker volume ls
+```
+
+---
+
+### 🌐 Create and Use a Custom Network
+
+List existing networks:
+
+```bash
+docker network ls
+```
+
+Create a custom network:
+
+```bash
+docker network create my-network
+```
+
+Run your container in the custom network:
+
+```bash
+docker run -d --network my-network --name myapp-container myapp
+```
+
+> This connects `myapp` to `my-network` and names the container `myapp-container`.
+
+---
+
+### 🧼 (Optional) Clean Up
+
+Remove a volume:
+
+```bash
+docker volume rm mydata
+```
+
+Remove a network:
+
+```bash
+docker network rm my-network
+```
+
+---
+
+✅ Now your `myapp` container can store persistent data and communicate with other services over a custom network!
+
+Let me know if you'd like to include visuals, compose files, or badges for GitHub!
+
+```
+
+---
+
 ## 📚 What You'll Learn
 
 - ✅ Core Docker concepts (images, containers, networks, volumes)
