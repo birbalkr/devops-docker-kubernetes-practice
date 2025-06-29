@@ -33,10 +33,9 @@ docker build: Command to build a Docker image.
 
 docker pull <image>       # Download image from Docker Hub for Ex: docker pull mysql
 
-docker rmi <image>        # Remove image
-
 docker rm <container-id> # You cannot remove an image if a container is currently using it. You may need to stop and remove the associated containers first:
 
+docker rmi <image>        # Remove image
 
     rmi: Stands for "remove image".
     <image-name-or-id>: # The name or ID of the image you want to delete.
@@ -59,6 +58,64 @@ docker tag <image> <tag>  # Tag image with a new name
 
 docker push myusername/myapp:v1.0
 
+```
+
+---
+
+### 🔹 Working with Containers
+
+```bash
+
+docker run <image>             # Run container from image
+    docker run: Creates and starts a new container from the specified image.
+    <image>: The image name (optionally with a tag like myapp:latest).
+
+    Example: docker run myapp.
+
+docker run -it <image>         # Run interactively
+    -i: Keep STDIN open even if not attached.
+    -t: Allocate a pseudo-TTY '(terminal)'.
+    Combined as -it, this allows you to interact with the container via the terminal.
+
+    # when you want to run a container and interact with it, e.g., start a shell inside a base image. it's also essential when running a containerized program that requires user input (e.g. read in shell scripts, prompts in Python, etc.).
+
+    Example:
+        docker run -it myapp
+
+docker run -d <image>          # Run in detached mode
+
+    -d stands for detached mode.
+    This runs the container in the background and prints the container ID.
+
+    Example:
+    docker run -d myapp.
+
+docker ps                      # List running containers / Shows all currently running Docker containers.
+
+    # CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS       PORTS                    NAMES
+    # a1b2c3d4e5f6   nginx     "nginx -g 'daemon   2 hours ago   Up 2 hours   0.0.0.0:8080->80/tcp     my-nginx
+
+
+docker ps -a                   # List all containers / To list all containers (running and stopped) Includes containers that have exited, been stopped, or failed.
+
+docker stop <container>        # Stop a running container / Stops a running container gracefully. You can use the container ID or name.
+    Example:
+        docker stop myapp
+
+docker start <container>       # Start a stopped container / Starts a container that was previously stopped.
+    Example:
+    docker start myapp
+
+docker restart <container>     # Restart a container /Stops and then starts the container again. Useful for applying changes like updated environment variables or configs.
+
+    Example:
+    docker restart myapp
+
+docker rm <container>          # Remove a container / Removes a stopped container from your system.
+    Example:
+        docker rm myapp
+
+docker exec -it <container> bash  # Open bash in running container
 ```
 
 ---
