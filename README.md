@@ -9,11 +9,15 @@
 
 ---
 
-## 📸 Project Preview
+## 🐳 Docker Commands Cheat Sheet
 
-![Project Preview](https://raw.githubusercontent.com/birbalkr/devops-docker-k8s-practice/main/assets/devops-preview.png)
+### 🔹 Docker Basics
 
-> _This image shows a sample project flow using Docker and Kubernetes. Add your own preview image inside the `/assets` folder._
+```bash
+docker --version          # Check Docker version
+docker info               # Display Docker system-wide information
+docker help               # Show help for Docker commands
+```
 
 ---
 
@@ -32,16 +36,16 @@
 
 ## 🧰 Tech Stack
 
-| Tool            | Purpose                        |
-|------------------|--------------------------------|
-| **Docker**       | Containerization engine        |
-| **Docker Compose** | Manage multi-container apps |
-| **Kubernetes**   | Container orchestration        |
-| **Minikube**     | Local K8s cluster              |
-| **kubectl**      | K8s command-line interface     |
-| **GitHub Actions** | CI/CD pipelines             |
-| **Helm** (optional) | K8s package manager        |
-| **Shell Scripting** | Automation tasks           |
+| Tool                | Purpose                     |
+| ------------------- | --------------------------- |
+| **Docker**          | Containerization engine     |
+| **Docker Compose**  | Manage multi-container apps |
+| **Kubernetes**      | Container orchestration     |
+| **Minikube**        | Local K8s cluster           |
+| **kubectl**         | K8s command-line interface  |
+| **GitHub Actions**  | CI/CD pipelines             |
+| **Helm** (optional) | K8s package manager         |
+| **Shell Scripting** | Automation tasks            |
 
 ---
 
@@ -55,3 +59,4 @@
 ├── assets/                 # Images and visual content
 ├── projects/               # Sample mini-projects
 └── README.md               # This file
+```
