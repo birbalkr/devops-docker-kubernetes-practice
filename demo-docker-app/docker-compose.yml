@@ -1,0 +1,20 @@
+services:
+  mysqldb:
+    image: 'mysql:latest'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=userinfo
+    container_name: "mysqldb"
+    healthcheck:
+      test: ["CMD", "mysqladmin","ping","-h","localhost"]
+      timeout: 20s
+      retries: 10
+
+  demo-docker-app:
+    build: ./
+    ports:
+      - "3000:3000"
+    container_name: myapp
+    depends_on:
+      mysqldb:
+        condition: service_healthy
