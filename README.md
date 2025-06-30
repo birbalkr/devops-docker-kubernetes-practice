@@ -235,6 +235,10 @@ docker restart myapp
 docker rm myapp
 ```
 
+![Docker Architecture](./demo-docker-app/localdb.jpg)
+![Docker Architecture](./demo-docker-app/containers.jpg)
+![Docker Architecture](./demo-docker-app/network.jpg)
+
 ## 💾 Docker Volumes & Networks (Using `myapp`)
 
 ### 📦 Create and Use a Volume
@@ -301,11 +305,75 @@ docker network rm my-network
 
 ---
 
-✅ Now your `myapp` container can store persistent data and communicate with other services over a custom network!
+## 📘 Docker Compose Command
 
-Let me know if you'd like to include visuals, compose files, or badges for GitHub!
+A categorized reference for using **Docker Compose** to manage multi-service applications.
 
-````
+---
+
+### 🔧 Build Commands
+
+| Task                      | Command                           |
+| ------------------------- | --------------------------------- |
+| Build all services        | `docker-compose build`            |
+| Build without using cache | `docker-compose build --no-cache` |
+| Build and start services  | `docker-compose up --build`       |
+
+---
+
+### 🚀 Starting Services
+
+| Task                                | Command                                   |
+| ----------------------------------- | ----------------------------------------- |
+| Start all services                  | `docker-compose up`                       |
+| Start in background (detached mode) | `docker-compose up -d`                    |
+| Start specific services             | `docker-compose up <service1> <service2>` |
+
+---
+
+### ⏹ Stopping & Removing
+
+| Task                             | Command                                   |
+| -------------------------------- | ----------------------------------------- |
+| Stop all services                | `docker-compose down`                     |
+| Stop and remove volumes + images | `docker-compose down --volumes --rmi all` |
+
+---
+
+### 🔁 Restarting Services
+
+| Task                    | Command                          |
+| ----------------------- | -------------------------------- |
+| Restart all services    | `docker-compose restart`         |
+| Start a stopped service | `docker-compose start <service>` |
+| Stop a running service  | `docker-compose stop <service>`  |
+
+---
+
+### 🧪 Run & Exec
+
+| Task                                     | Command                                   |
+| ---------------------------------------- | ----------------------------------------- |
+| Run one-off command in a new container   | `docker-compose run <service> <command>`  |
+| Exec into a running container            | `docker-compose exec <service> <command>` |
+| Example: Enter bash shell in a container | `docker-compose exec <service> bash`      |
+
+---
+
+### 📜 Logs & Status
+
+| Task                     | Command                  |
+| ------------------------ | ------------------------ |
+| View container status    | `docker-compose ps`      |
+| View service logs        | `docker-compose logs`    |
+| Follow logs in real-time | `docker-compose logs -f` |
+
+---
+
+### 📚 Resources
+
+- 📖 [Docker Compose Documentation](https://docs.docker.com/compose/)
+- 📦 [Docker CLI Reference](https://docs.docker.com/engine/reference/commandline/compose/)
 
 ---
 
@@ -347,4 +415,4 @@ Let me know if you'd like to include visuals, compose files, or badges for GitHu
 ├── assets/                 # Images and visual content
 ├── projects/               # Sample mini-projects
 └── README.md               # This file
-````
+```
